@@ -1,6 +1,6 @@
 .images
 {
-    width: 600px;;
+    width: 100%;;
     height: 600px;;
 }
 h1{
@@ -12,6 +12,19 @@ h2
     font-family: 'Times New Roman', Times, serif;
     background-color: blueviolet;
 }
-body{
-    background-color: aqua;
-}
+.div_main:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+    .div_left, .div_text, .div_right  {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+    }
+    * {
+        box-sizing: border-box;
+        }
+
+   
