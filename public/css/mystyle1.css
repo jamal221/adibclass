@@ -18,6 +18,7 @@ h2
     content: "";
     display: table;
     clear: both;
+    position: absolute
     }
     .div_left, .div_text, .div_right  {
         float: left;
@@ -36,9 +37,26 @@ h2
         .bottom-left {
             position: absolute;
             top: 140%;
-            left: 50%;
+            left: 30%;
             transform: translate(-50%, -50%);
             font-size: 25px;
                 }
+div.div_images{
+    position: absolute;
+    top:95%;
+    left: 30%;
+    width: 300px;
+    z-index: 1;
+    border: 3px solid #73AD21;
+}
+div.div2{
+    position: absolute;
+     top:95%;
+     left: 50%;
+      width: 300px;
+       height: 200px; 
+       background-color: lightgreen;
+        z-index: 1;
+    }
 
    
