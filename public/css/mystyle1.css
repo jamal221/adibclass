@@ -68,13 +68,19 @@ div.div2{
         font-family: "Titr";
         src: url(/public/fonts/Titr/TitrBold.ttf) format('ttf');
       }
-@media(min-width:1200px){
+/* @media(min-width:1400px){
     p{
         text-align: right !important;
     }
     img{
         float: right;
     }
+} */
+
+
+.images{
+    height: 300px;
+    border-radius: 10%;
 }
 
 
