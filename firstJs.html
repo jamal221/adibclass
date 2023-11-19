@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="public/css/bootstrap.css" />
+</head>
+<body>
+    <h1 class="btn-outline-primary"  onfocus="timeshow()" id="h1RES">لطفا کلیک نمایید تا زمان فعلی را مشاهده نمایید</h1>
+    <label for="username">User Name</label>
+    <input type="text" id="username" name="username" oninput="showText()" class="input-group-text"></input>
+    <input type="button" id="1" name="1" onclick="showbtn1()"  value="1"></input>
+    <input type="button" id="2" name="2" onclick="showbtn2()"  value="2"></input>
+
+    <div class="container-fluid">
+        <div class="card-body" id="resDiv">
+
+        </div>
+    </div>
+    <div id="div1" style="display: none;">
+        jamal
+    </div>
+    <div id="div2" style="display: none;">
+        kamal
+    </div>
+    
+</body>
+</html>
+<script >
+    function timeshow(){
+        // alert(" به برنامه خوش آمدید");
+        document.getElementById("resDiv").innerHTML= Date();
+        // location.reload();
+    }
+
+    function showText(){
+        console.log({
+            "a":1,
+            "b":2
+        })
+        document.getElementById("h1RES").innerHTML= document.getElementById("username").value;
+    }
+
+    function showbtn1(){
+        document.getElementById("div1").style.display="block";
+        document.getElementById("div2").style.display="none";
+    }
+
+    function showbtn2(){
+        document.getElementById("div1").style.display="none";
+        document.getElementById("div2").style.display="block";
+    }
+</script>
