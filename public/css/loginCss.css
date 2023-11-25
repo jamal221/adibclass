@@ -1,7 +1,7 @@
 body{
     /* background-color: #080710; */
     /* background-image: url("../../public/images/m1.jpg"); */
-    background-image: url(https://my.bmi.ir/portalserver/static/ibank/widgets/bmi-change-background-random/data/images/31.jpg);
+    background-image: url(https://my.bmi.ir/portalserver/static/ibank/widgets/bmi-change-background-random/data/images/6.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -18,7 +18,7 @@ body{
     height: 200px;
     width: 200px;
     position: absolute;
-    border-radius: 40%;
+    border-radius: 30%;
 }
 .background .shape2{
     height: 200px;
@@ -29,7 +29,7 @@ body{
 
 .shape1:first-child{
     background: linear-gradient(
-        #94ad18,
+        #6008ec,
         #23a2f6
     );
     left: -80px;
