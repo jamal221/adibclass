@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <!-- Design by foolishdeveloper.com -->
+     <meta charset="UTF-8">
     <title>Glassmorphism login Form Tutorial in html css</title>
  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/css/loginCss.css">
+    <link rel="stylesheet" href="public/css/w3.css">
     <style media="screen">
       *,
     *:before,
@@ -20,11 +22,26 @@
     </style>
 </head>
 <body>
+   
     <div class="background">
         <div class="shape1"></div>
         <div class="shape2"></div>
         <div class="shape3"></div>
     </div>
+
+    <div id="id01" class="w3-modal-content w3-animate-zoom w3-card-4" style="display: none;">
+        <header class="w3-container  w3-teal">
+            <span onclick="document.getElementById('id01').style.display='none'"  class="w3-button w3-display-topleft">×</span>
+                <h2 style="text-align: right; margin-right: 30px; font-size: 45px; font-family: 'B Titr';">بررسی اطلاعات اولیه</h2>
+        </header>
+        <div class="w3-container">
+            آیا از ورود خود به سیستم مطمین هستید؟
+        </div>
+        <footer class="w3-container w3-amber">
+            <h2><a href="https://www.desk2929.ir" target="_blank">واحد فناوری</a></h2>
+        </footer>
+    </div>
+   
     <form>
         <h3>Login Here</h3>
 
@@ -36,7 +53,7 @@
         <label for="checkbtn">Accept</label>
         <input type="checkbox" onchange="btnactive()"  id="checkbtn" style="width: 20px; margin-left: 50%;">
 
-        <button id="btn" hidden>Log In</button>
+        <button id="btn"  onclick="show_modul()">Log In</button>
         <div class="social">
           <div class="go"><i class="fab fa-google"></i>  Google</div>
           <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
@@ -55,4 +72,17 @@ function btnactive(){
     document.getElementById("btn").hidden=true;
 
 }
+
+function show_modul(){
+    document.getElementById('id01').style.display='block';
+}
+
+var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 </script>
