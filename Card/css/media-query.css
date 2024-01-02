@@ -1,0 +1,204 @@
+@media screen and (min-width: 576px) {
+
+    .cart-item {
+        padding: 1rem 2rem;
+    }
+
+    .cart-item-right-img {
+        border-radius: 10px;
+        width: 90px;
+        height: 80px;
+    }
+
+    .cart-item-img {
+        width: 120px;
+        transform-origin: 20% 71%;
+        transform: scale(1.4);
+    }
+
+    .cart-item-right-text p:nth-child(1) {
+        font-size: 1.6rem;
+        margin: .3rem 0 1rem 0;
+    }
+
+    .cart-item-right-text p:nth-child(2) {
+        font-size: 1.2rem;
+    }
+
+    .cart-item-left {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .cart-item-left p {
+        font-size: 1.5rem;
+    }
+
+    .cart-item-left button {
+        margin: -.8rem 1rem 0 0;
+    }
+
+    .price-discount button {
+        position: absolute;
+        left: 35px;
+        top: 7px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    header{
+        padding: 0 7rem;
+    }
+
+    .burger-menu{
+        display: none;
+    }
+    
+    .menu-list{
+        display: flex;
+        width: 450px;
+        justify-content: space-evenly;
+    }
+
+    .cart-item {
+        width: 82%;
+    }
+
+    .cart-item-right-text p:nth-child(1) {
+        font-size: 2rem;
+        margin-top: .5rem;
+    }
+
+    .cart-item-right-text p:nth-child(2) {
+        font-size: 1.3rem;
+    }
+
+    .cart-item-left p {
+        font-size: 1.9rem;
+    }
+
+    .price-header h3 {
+        font-size: 1.7rem;
+        color: #5c5c5c;
+    }
+
+    .price-discount input {
+        height: 4.7rem;
+        padding: .7rem 1rem;
+        font-size: 1.5rem;
+    }
+
+    .price-discount button {
+        position: absolute;
+        left: 35px;
+        top: 7px;
+        padding: .6rem 1rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .main-content {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cart-items-section {
+        margin: 0;
+    }
+
+    .cart-list {
+        min-height: 450px;
+    }
+
+    .cart-item {
+        width: 500px;
+        height: 120px;
+        margin-bottom: 1rem;
+        padding-right: 1rem;
+    }
+
+    .cart-item-right-img {
+        border-radius: 10px;
+        width: 100px;
+        height: 90px;
+    }
+
+    .cart-item-img {
+        width: 135px;
+        transform-origin: 23% 71%;
+        transform: scale(1.4);
+    }
+
+    .cart-item-right-text p:nth-child(1) {
+        font-size: 1.8rem;
+        margin-top: .7rem;
+    }
+
+    .price-box-section {
+        width: auto;
+        margin: 0 5rem 0 0;
+    }
+
+    .price-box {
+        background-color: #fff;
+        border-radius: 7%;
+        width: 400px;
+        height: 450px;
+        padding: 2rem;
+        margin: 0 auto;
+        box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
+    }
+
+    .hr {
+        margin-bottom: 2rem;
+    }
+
+    .input-container {
+        margin-bottom: 3.5rem;
+    }
+
+    .price-discount button {
+        position: absolute;
+        left: 27px;
+        top: 7px;
+        padding: .6rem 1rem;
+    }
+
+    .price-data {
+        margin: 3rem 0;
+    }
+
+    .price-data .align {
+        margin-bottom: 2rem;
+    }
+
+    .price-data .align .value {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    header{
+        padding: 0 10rem;
+    }
+
+    .cart-item {
+        width: 600px;
+        height: 120px;
+        margin-bottom: 1rem;
+        padding-right: 1.5rem
+    }
+
+    .cart-item-right-text p:nth-child(1) {
+        font-size: 2rem;
+        margin-top: .7rem;
+    }
+
+    .cart-item-left svg {
+        width: 1.7rem !important;
+        height: 1.7rem !important;
+    }
+}

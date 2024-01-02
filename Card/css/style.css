@@ -1,0 +1,562 @@
+/*! Coderna || ساخته شده توسط کدرنا */
+/*? T.me/coderna_js */
+/*  :) حمایت یادتون نره  */
+
+@font-face {
+    font-family: "vazir";
+    src: url(../assets/font/Vazir.woff) format(woff),
+        url(../assets/font/Vazir-Bold.woff) format(woff);
+}
+
+@font-face {
+    font-family: "tanha";
+    src: url(../assets/font/Tanha.woff) format(woff);
+}
+
+:root {
+    --light-purple: rgb(134, 98, 220);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "tanha";
+    border: 0;
+    outline: none;
+    list-style: none;
+}
+
+*::selection {
+    background-color: var(--light-purple);
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #5c5c5c;
+}
+
+svg, path{
+    pointer-events: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.flex {
+    display: flex;
+}
+
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* صفحه اصلی */
+
+header {
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
+    height: 58px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    /* margin-bottom: 3rem; */
+}
+
+.sidebar-container {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    padding: 2rem;
+    transition: transform .2s;
+    transform: translateX(30rem);
+    z-index: 2;
+}
+
+.sidebar-container .hr {
+    width: 100%;
+    background-color: #ccc;
+    margin: 1.5rem 0 3rem 0;
+}
+
+.sidebar-top {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-top button {
+    color: var(--light-purple);
+}
+
+.sidebar-top button svg {
+    margin-bottom: -.5rem;
+}
+
+.sidebar-container .menu-list {
+    height: 200px;
+    flex-direction: column;
+    width: auto;
+    align-items: flex-start;
+}
+
+.sidebar-container .menu-list li {
+    font-size: 1.8rem;
+}
+
+.header-right {
+    align-items: center;
+}
+
+.logo-conatiner {
+    color: var(--light-purple);
+    font-size: 2.5rem;
+    font-family: "tanha" !important;
+    align-items: center;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.burger-menu {
+    margin-bottom: -.5rem;
+}
+
+.menu-list {
+    display: none;
+    width: 450px;
+    justify-content: space-evenly;
+}
+
+.menu-item {
+    align-items: center;
+    font-size: 1.6rem;
+    color: #858585;
+    cursor: pointer;
+}
+
+.menu-item a:hover {
+    color: var(--light-purple);
+}
+
+.menu-item svg {
+    margin-left: .5rem;
+}
+
+.header-left div {
+    padding: .9rem 1rem .5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    margin-right: 1rem;
+    transition: background-color .2s;
+    color: #5c5c5c;
+}
+
+.header-left div:hover {
+    background-color: var(--light-purple);
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid var(--light-purple);
+}
+
+.header-left div:hover a {
+    color: #fff;
+}
+
+.cart-button {
+    position: relative;
+}
+
+.cart-button .cart-button-number {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    padding: 0;
+    position: absolute;
+    right: -.5rem;
+    top: -.5rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 30%;
+   background-color: aqua;
+    color: #141212;
+    font-size: 1rem;
+}
+
+/* بخش دوره ها */
+
+.main-content{
+    margin-top: 8rem;
+    padding-bottom: 5rem;
+}
+
+.courses-section {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    height: calc(100vh - 58px);
+}
+
+.courses-title {
+    align-items: center;
+    margin: 0 auto 3rem auto;
+    width: 83%;
+    font-size: 2.3rem;
+    color: var(--light-purple);
+    font-weight: bold;
+}
+
+.courses-title .svg-container {
+    padding: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--light-purple);
+    color: #fff;
+    margin-left: 1.5rem;
+}
+
+.slider-container {
+    padding: 5.5rem 1rem 0 2rem;
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
+    width: 85%;
+    height: 500px;
+    margin: 0 auto -2rem auto;
+    background-color: rgba(206, 185, 255, 0.1);
+    overflow: hidden;
+    cursor: grab;
+}
+
+.splide__track{
+    overflow: visible;
+}
+
+.slider-item {
+    width: 330px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2.7rem;
+}
+
+.slider-item img {
+    margin: -4.5rem auto 2rem auto;
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
+    width: 28rem;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.slider-item-desc h2 {
+    font-size: 1.8rem;
+    color: #5c5c5c;
+    margin-bottom: 3rem;
+}
+
+.time-students {
+    align-items: center;
+}
+
+.slider-desc-time svg {
+    color: var(--light-purple);
+    margin-left: .5rem;
+}
+
+.slider-desc-time p {
+    color: #5c5c5c;
+    font-size: 1.3rem;
+    margin: -.3rem 0 0 2.5rem;
+}
+
+.slider-desc-students {
+    margin-top: -.2rem;
+}
+
+.slider-desc-students svg {
+    color: var(--light-purple);
+    margin-left: .5rem;
+}
+
+.slider-desc-students p {
+    color: #5c5c5c;
+    font-size: 1.3rem;
+    margin-top: -.2rem;
+}
+
+.about-course {
+    justify-content: flex-start;
+    margin: 1.5rem 0 2.2rem 0;
+
+}
+
+.about-course h3 {
+    font-size: 1.5rem;
+    color: var(--light-purple);
+    cursor: pointer;
+}
+
+.about-course svg {
+    margin: 0 .3rem -.3rem 0;
+    color: var(--light-purple);
+    cursor: pointer;
+}
+
+.price-payment {
+    justify-content: space-between;
+    padding-left: .7rem;
+}
+
+.price-payment button {
+    font-family: "tanha";
+    padding: .7rem 1.5rem;
+    font-size: 1.5rem;
+    background-color: var(--light-purple);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgb(133, 112, 183);
+}
+
+.price-payment p {
+    font-size: 1.5rem;
+    color: #5c5c5c;
+}
+
+.price-payment span {
+    color: var(--light-purple);
+    font-weight: bold;
+    margin-left: .5rem;
+    font-size: 1.9rem;
+}
+
+
+
+
+/*? صفحه سبد خرید */
+.cart-items-section {
+    margin-top: 2rem;
+}
+
+.cart-item {
+    width: 92%;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 0 auto;
+    justify-content: space-between;
+    border: 2px solid var(--light-purple);
+    padding: 0rem 0 0rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
+    margin-bottom: .5rem;
+}
+
+.cart-item-right {
+    display: flex;
+}
+
+.cart-item-right-img {
+    width: 80px;
+    height: 70px;
+    overflow: hidden;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: 1rem;
+}
+
+.cart-item-img {
+    width: 100px;
+    transform-origin: 35% 63%;
+    transform: scale(1.5);
+}
+
+.cart-item-right-text svg {
+    margin-bottom: -.3rem;
+}
+
+.cart-item-right-text p:nth-child(1) {
+    font-size: 1.3rem;
+    color: rgb(134, 98, 220);
+    font-weight: bold;
+    margin: .7rem 0;
+}
+
+.cart-item-right-text p:nth-child(2) {
+    font-size: 1.1rem;
+}
+
+.cart-item-left {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    height: 70px;
+}
+
+.cart-item-left button {
+    background-color: transparent;
+    margin-top: .5rem;
+    height: 1.6rem;
+    border-radius: 50%;
+}
+
+.cart-item-left svg {
+    cursor: pointer;
+    color: var(--light-purple);
+}
+
+.cart-item-left p {
+    font-size: 1.2rem;
+    margin-bottom: .8rem;
+}
+
+.cart-item-left span {
+    color: var(--light-purple);
+    font-weight: bold;
+    margin-left: .2rem;
+}
+
+/* اطلاعات پرداخت */
+.price-box-section {
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.price-box {
+    background-color: #fff;
+    border-radius: 7%;
+    width: 92%;
+    max-width: 550px;
+    height: 410px;
+    padding: 2rem;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
+}
+
+.price-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #5c5c5c;
+}
+
+.price-header svg {
+    width: 33px;
+    margin-left: 8px;
+    color: rgb(89, 56, 167);
+}
+
+.hr {
+    display: block;
+    background-color: #75757525;
+    width: 90%;
+    height: 1px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.price-discount {
+    margin-right: 10px;
+}
+
+.price-discount h3 {
+    margin: 0 5px 5px 0;
+    font-size: 1.5rem;
+    color: #5c5c5c;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.price-discount input {
+    font-family: "vazir";
+    background-color: #f5f5f5;
+    width: 95%;
+    height: 4.2rem;
+    padding: .7rem;
+    border-radius: 5px;
+    margin: 0 auto;
+    outline: 2px solid var(--light-purple);
+}
+
+.price-discount button {
+    position: absolute;
+    left: 28px;
+    top: 7px;
+    font-family: "vazir";
+    background-color: rgb(151, 118, 228);
+    color: #fff;
+    padding: .4rem .7rem;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgb(133, 112, 183);
+}
+
+.price-discount button:hover {
+    box-shadow: 0 0 5px rgb(133, 112, 183)
+}
+
+.price-discount p{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.price-data {
+    padding: 0 5px;
+    margin-bottom: 30px;
+}
+
+.price-data .align {
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.price-data .title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #5c5c5c;
+    cursor: default;
+}
+
+.price-data .value {
+    font-size: 14px;
+    color: #5c5c5c;
+    cursor: default;
+}
+
+.payment {
+    width: 100%;
+    text-align: center;
+}
+
+.payment button {
+    width: 95%;
+    font-family: "vazir";
+    background-color: rgb(134, 98, 220);
+    color: #fff;
+    padding: .7rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 1.6rem;
+    box-shadow: 0 0 5px rgb(151, 118, 228);
+}
+
+.payment button:hover {
+    box-shadow: 0 0 10px rgb(151, 118, 228);
+}
