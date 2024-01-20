@@ -52,7 +52,7 @@
     }
 
     .burger-menu{
-        display: none;
+        display: block;
     }
     
     .menu-list{

@@ -1,20 +1,26 @@
 const cartList = document.querySelector(".cart-list");
-window.addEventListener("DOMContentLoaded", () => {
-    // alert("hello");
-    const courseItems = Object.keys(localStorage).filter(course=>{
-        if (course.includes("courseList")) {
-            console.log({
-                "item":course
-            })
-          return course
-        }
+let AllPrie = 0;
+// window.addEventListener("DOMContentLoaded", () => {
+  // alert("hello");
+  function toEnDigit(s) {
+    return s.replace(/[\u0660-\u0669\u06f0-\u06f9]/g,    // Detect all Persian/Arabic Digit in range of their Unicode with a global RegEx character set
+        function(a) { return a.charCodeAt(0) & 0xf }     // Remove the Unicode base(2) range that not match
+    )
+}
+  const courseItems = Object.keys(localStorage).filter(course => {
+    if (course.includes("courseList")) {
+      console.log({
+        "item": course
       })
-      courseItems.forEach((course) => {
-        const itemData = JSON.parse(localStorage.getItem(course));
-        
-        const liElement = document.createElement("li");
-        liElement.className = "align cart-item";
-        liElement.innerHTML = `<div class="cart-item-right">
+      return course
+    }
+  })
+  courseItems.forEach((course) => {
+    const itemData = JSON.parse(localStorage.getItem(course));
+
+    const liElement = document.createElement("li");
+    liElement.className = "align cart-item";
+    liElement.innerHTML = `<div class="cart-item-right">
             <div class="cart-item-right-img">
               <img
                 class="cart-item-img"
@@ -65,6 +71,43 @@ window.addEventListener("DOMContentLoaded", () => {
             </button>
             <p><span>${itemData.price}</span>تومان</p>
             </div>`;
-        cartList.appendChild(liElement);
-      });    
-})
+    cartList.appendChild(liElement);
+    var price = (itemData.price).replace(/,/g, "");
+    const price2=toEnDigit(price);
+   
+    
+    AllPrie = AllPrie + parseInt(price2);
+    console.log({
+      "AllPrie":AllPrie
+    })
+
+    // AllPrie=AllPrie+parseInt(price);
+  });  //end for
+  const e2p = s=>s.replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+  AllPrie=new Intl.NumberFormat().format(AllPrie,)
+  PersianAllPrie=e2p(AllPrie.toString());
+  document.getElementById("TotalPrice").innerHTML=PersianAllPrie;
+  document.getElementById("totalPayment").innerHTML=PersianAllPrie;
+  // console.log({
+  //   " price": AllPrie
+  // })
+  function ApplyDiscout(inf){
+    var codeDisc=inf.value;
+    console.log({
+      "disCode":codeDisc
+    })
+    if(codeDisc==123){
+    var discount=0.15
+      document.getElementById("discount-amount").innerHTML=discount+"درصد";
+      var pric=document.getElementById("TotalPrice").innerHTML;
+      pric=(pric).replace(/,/g, "");
+      pric=pric-discount*pric;
+      document.getElementById("totalPayment").innerHTML=new Intl.NumberFormat().format(pric,);
+    }else{
+      var pric=document.getElementById("TotalPrice").innerHTML;
+      pric=(pric).replace(/,/g, "");
+      document.getElementById("totalPayment").innerHTML=new Intl.NumberFormat().format(pric-0,);
+    }
+   
+  }
+// })
